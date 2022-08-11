@@ -3,9 +3,19 @@
 {% block title %}{{ title }}{% endblock %}
 
 {% block content %}
+
+
+
+<header class="header">
     {% for item in news %}
-        <h1>{{ item.title }}</h1>
-        <h4>{{ item.content }}</h4>
-        <h4>{{ item.created_at}}</h4>
+    <h1 class="title">{{ item.title }}</h1>
+    <div class="content">{{ item.content }}</div>
+    <div class="date">{{ item.created_at }}</div>
+    <hr class="hr-line">
     {% endfor %}
+</header>
+
+
+
+
 {% endblock %}
