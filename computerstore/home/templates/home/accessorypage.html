@@ -7,11 +7,14 @@
 
 
 <header class="header">
-    {% for item in news %}
+    {% for item in acc %}
     <h1 class="title">{{ item.title }}</h1>
     <img src="{{ item.photo.url }}" alt="{{ item.title }}" height="300px" class="img">
     <div class="content">{{ item.content }}</div>
-    <div class="date">{{ item.created_at }}</div>
+    <ul class="category-list">
+        <li>{{ item.types }}</li>
+    </ul>
+    <a class="link" href="#">{{ item.price }} ₸</a>
     <hr class="hr-line">
     {% endfor %}
 </header>
