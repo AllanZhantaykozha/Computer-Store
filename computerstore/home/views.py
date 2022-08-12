@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.views.generic import ListView
+from django.views.generic import ListView, DetailView
 from .models import PC, Accessory, Type, News
 
 #90887
@@ -33,3 +33,13 @@ class AccessoryPage(ListView):
         context = super().get_context_data(**kwargs)
         context['title'] = 'Accessory Shop'
         return context
+
+class DetailComputerPage(DetailView):
+    model = PC
+    context_object_name = 'pcdetail'
+    template_name = 'home/computerdetailpage.html'
+    
+class DetailAccessoryPage(DetailView):
+    model = Accessory
+    context_object_name = 'accdetail'
+    template_name = 'home/accessorydetailpage.html'

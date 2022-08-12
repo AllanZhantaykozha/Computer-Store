@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+
+
+
+<header class="d-header">
+    <h1 class="d-title">{{ accdetail.title }}</h1>
+    <img src="{{ accdetail.photo.url }}" alt="{{ accdetail.title }}" height="300px" class="d-img">
+    <main class="main">
+        <div class="d-content">{{ accdetail.content }}</div>
+        <h2>{{ accdetail.price }} ₸</h2> 
+        <h4 class="type">{{ accdetail.types }}</h4>
+    </main>        
+    
+</header>
+
+
+
+
+{% endblock %}

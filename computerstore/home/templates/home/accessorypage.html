@@ -14,7 +14,7 @@
     <ul class="category-list">
         <li>{{ item.types }}</li>
     </ul>
-    <a class="link" href="#">{{ item.price }} ₸</a>
+    <a class="link" href="{{ item.get_absolute_url}}">{{ item.price }} ₸</a>
     <hr class="hr-line">
     {% endfor %}
 </header>

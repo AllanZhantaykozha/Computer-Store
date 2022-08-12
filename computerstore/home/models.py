@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 
 
 class News(models.Model):
@@ -13,6 +14,10 @@ class News(models.Model):
 
     class Meta:
         ordering = ['-created_at']
+
+    def get_absolute_url(self):
+        return reverse('detailnews', kwargs={'slug': self.slug})
+
 
 class PC(models.Model):
     title = models.CharField(max_length=150)
@@ -31,6 +36,10 @@ class PC(models.Model):
     class Meta:
         ordering = ['title']
 
+    def get_absolute_url(self):
+        return reverse('detailpc', kwargs={'slug': self.slug})
+
+
 class Accessory(models.Model):
     title = models.CharField(max_length=150)
     slug = models.SlugField(max_length=150, unique=True, db_index=True)
@@ -44,6 +53,10 @@ class Accessory(models.Model):
 
     class Meta:
         ordering = ['title']
+
+    def get_absolute_url(self):
+        return reverse('detailacc', kwargs={'slug': self.slug})
+
 
 class Type(models.Model):
     title = models.CharField(max_length=150)
