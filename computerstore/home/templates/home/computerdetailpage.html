@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+
+
+
+<header class="d-header">
+    <h1 class="d-title">{{ pcdetail.title }}</h1>
+    <img src="{{ pcdetail.photo.url }}" alt="{{ pcdetail.title }}" height="300px" class="d-img">
+    <main class="main">
+        <div class="d-content">{{ pcdetail.content }}</div>
+        <h2>{{ pcdetail.price }} ₸</h2> 
+    </main>        
+    <ul class="d-category-list">
+            <li class="d-li">{{ pcdetail.cpu }}</li>
+            <li class="d-li">{{ pcdetail.gpu }}</li>
+            <li class="d-li">{{ pcdetail.ram }} GB</li>
+            <li class="d-li">{{ pcdetail.memory }} GB</li>
+    </ul>
+</header>
+
+
+
+
+{% endblock %}

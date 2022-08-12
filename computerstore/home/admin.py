@@ -24,10 +24,10 @@ class AccessoryAdmin(admin.ModelAdmin):
     prepopulated_fields = {"slug": ("title",)}
 
 class TypeAdmin(admin.ModelAdmin):
-    list_display = ('id', 'title', )
+    list_display = ('id', 'title', 'slug')
     list_display_links = ('id', 'title')
-    search_fields = ('id', 'title', )
-    fields = ('title', )
+    search_fields = ('id', 'title', 'slug')
+    fields = ('title', 'slug')
     prepopulated_fields = {"slug": ("title",)}
 
 admin.site.register(News, NewsAdmin)
