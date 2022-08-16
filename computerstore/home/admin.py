@@ -3,11 +3,10 @@ from .models import News, PC, Accessory, Type
 
 
 class NewsAdmin(admin.ModelAdmin):
-    list_display = ('id', 'title', 'created_at', 'photo', 'slug')
+    list_display = ('id', 'title', 'created_at', 'photo')
     list_display_links = ('id', 'title')
     search_fields = ('id', 'title', 'created_at')
-    fields = ('title', 'slug', 'content', 'photo')
-    prepopulated_fields = {"slug": ("title",)}
+    fields = ('title', 'content', 'photo')
 
 class PCAdmin(admin.ModelAdmin):
     list_display = ('id', 'title', 'cpu', 'gpu', 'ram', 'memory', 'photo', 'price')
