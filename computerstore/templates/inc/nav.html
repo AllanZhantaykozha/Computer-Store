@@ -1,18 +1,38 @@
-<nav class="navbar navbar-expand-lg bg-light">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="{% url 'home' %}">Computer Store</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="{% url 'computer' %}">Computers</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{% url 'accessory' %}">Accessories</a>
-        </li>
+<nav class="nav">
+  <ul class="nav__list">
+    <li class="nav__listlogo">
+      <a class="navbar-brand" href="{% url 'home' %}">
+        <img src="media/logo/computer-logo.png" alt="" width="50">
+      </a>
+    </li>
+    <li class="listitem"><a href="{% url 'home' %}" class="link_add">News</a></li>
+    <li class="listitem"><a href="{% url 'computer' %}" class="link_add">Computers</a></li>
+    <li class="listitem"><a href="{% url 'accessory' %}" class="link_add">Accessories</a></li>
+
+    {% if request.user.is_authenticated %}
+    <li class="listitem">Add An Advert
+      <ul class="nav__listitemdrop">
+        <li><a href="{% url 'add_news' %}" class="link_add">Add News</a></li>
+        <li><a href="{% url 'add_pc' %}" class="link_add">Add Computer</a></li>
+        <li><a href="{% url 'add_acc' %}" class="link_add">Add Accessory</a></li>
       </ul>
-    </div>
-  </div>
+    </li>
+    {% endif %}
+
+
+    {% if request.user.is_authenticated %}
+    <li class="listitem">My profile
+      <ul class="nav__listitemdrop">
+        <li><a href="{% url 'logout' %}" class="link_add">Logout</a></li>
+      </ul>
+    </li>
+    {% else %}
+    <li class="listitem"><a href="{% url 'login' %}" class="link_add">Login</a></li>
+    <li class="listitem"><a href="{% url 'register' %}" class="link_add">Register</a></li>
+    {% endif %}
+
+
+
+
+  </ul>
 </nav>

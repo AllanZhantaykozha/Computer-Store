@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+<header class="header">
+  <div class="row g-3">
+    <form action="{% url 'login' %}" method="POST" enctype="multipart/form-data">
+      <h1 class="title">Login</h1>
+      
+      {% csrf_token %}
+
+      {{ form.as_p }}
+
+      <button type="submit" class="btn btn-outline-dark">Login</button>
+
+    </form>
+  </div>
+</header>
+{% endblock %}

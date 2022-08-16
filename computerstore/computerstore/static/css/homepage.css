@@ -4,7 +4,7 @@
     padding-left: 30px;
     padding-right: 30px;
     padding-top: 30px;
-    font-family: 'Raleway', sans-serif;
+    font-family: Montserrat, sans-serif;
     text-align: center;
     margin-left: auto;
     margin-right: auto;
@@ -18,7 +18,6 @@
     margin-bottom: 30px;
 }
 .hr-line {
-    margin: -30px auto 10px;
 	padding: 0;
 	height: 50px;
 	border: none;
@@ -31,6 +30,7 @@
     margin-bottom: 30px;
     border-radius: 2%;
 }
+
 
 .category-list * {transition: .4s linear;}
 .category-list {
@@ -61,3 +61,8 @@
 .link:hover {
     text-decoration: none;
     color: #cf0000;
+}
+
+.pag_nav{
+  margin-left: 100px;
+}
